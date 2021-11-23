@@ -13,7 +13,7 @@ class SearchPost extends Component
     public function render()
     {
         if(strlen($this->query) > 2 ){
-            $this->results = Post::where('title', 'like', `%{$this->query}%`)->get();
+            $this->results = Post::where('title', 'like', "%{$this->query}%")->get();
         }
         return view('livewire.search-post');
     }
