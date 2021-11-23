@@ -9,7 +9,12 @@ class SearchPost extends Component
 {
     public $query = '';
     public $results;
-    protected $queryString = ['query'];
+    protected $queryString = ['query' => ['except' => '']];
+
+    public function mount()
+    {
+        $this->reset();
+    }
     public function render()
     {
         if(strlen($this->query) > 2 ){

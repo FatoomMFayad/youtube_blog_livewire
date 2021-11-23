@@ -9,14 +9,14 @@
         <ul>
             @foreach($results as $result)
                 <li class="border-b border-gray-700">
-                    <a href="" class="block hover:bg-gray-700 text-gray-200 px-3 py-3 items-center transition ease-in-out duration-150">
+                    <a href="{{route('posts.show', $result->slug)}}" class="block hover:bg-gray-700 text-gray-200 px-3 py-3 items-center transition ease-in-out duration-150">
                         <span class="ml-4">{{ $result->title }}</span>
                     </a>
                 </li>
             @endforeach
         </ul>
         @else
-            <div>No Result Found</div>
+            <div class="m2 p2 text-gray-50">No results</div>
         @endif
     </div>
 
